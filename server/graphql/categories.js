@@ -1,6 +1,6 @@
 export const typeDef = `
     type Category {
-        id: Int!
+        _id: ID!
         name: String!
         products: [Product]
     }
@@ -11,13 +11,13 @@ export const typeDef = `
 
     extend type Query {
         categories: [Category]
-        category(id: Int!): Category
+        category(id: ID!): Category
     }
 
     extend type Mutation {
-        deleteCategory(id: Int!): Int
+        deleteCategory(id: ID!): Int
         createCategory(input: CategoryInput!): Category
-        updateCategory(id: Int!, input: CategoryInput!): Category
+        updateCategory(id: ID!, input: CategoryInput!): Category
     }
 `;
 
