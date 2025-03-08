@@ -1,0 +1,91 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Node.js
+node_modules/
+**/node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+*.pyo
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+target/
+out/
+.gradle/
+build/
+
+# JetBrains IDEs
+.idea/
+
+# Android
+*.apk
+*.aab
+*.dex
+*.so
+*.o
+*.obj
+*.class
+*.keystore
+/build/
+.gradle/
+local.properties
+
+# Xcode
+*.xcworkspace/
+*.xcuserstate
+*.xcuserdatad*
+*.xcscmblueprint
+DerivedData/
+Pods/
+
+# iOS
+*.ipa
+
+# Swift Package Manager
+/.swiftpm/
+Package.resolved
+
+# React Native
+android/.gradle/
+ios/Pods/
+ios/.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Logs & Debugging
+*.log
+*.bak
+*.swp
+*.swo
+*.swn
+*.err
+
+# OS-specific
+ehthumbs.db
+desktop.ini
+
+# Docker
+.env
+docker-compose.override.yml
+**/docker-compose.override.yml
