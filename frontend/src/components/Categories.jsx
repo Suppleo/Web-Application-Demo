@@ -6,6 +6,10 @@ import {
   CREATE_CATEGORY,
   DELETE_CATEGORY,
 } from '../graphql/categories'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card, CardContent } from "@/components/ui/card"
+import { PlusCircle, Pencil, Trash2 } from "lucide-react"
 
 const Categories = () => {
   const [newCategoryName, setNewCategoryName] = useState('')
@@ -37,54 +41,54 @@ const Categories = () => {
     }
   }
 
-  if (loading) return <p className='text-2xl'>Loading...</p>
-  if (error) return <p className='text-red-500'>Error: {error.message}</p>
+  if (loading) return <div className="flex justify-center items-center h-screen"><p className="text-2xl">Loading...</p></div>
+  if (error) return <div className="flex justify-center items-center h-screen"><p className="text-red-500">Error: {error.message}</p></div>
 
   return (
-    <div className='categories-container min-h-screen bg-[#242424] p-8 rounded-xl'>
-      <h1 className='text-6xl font-bold pb-2 mb-8 bg-gradient-to-r from-[#646cff] to-[#535bf2] bg-clip-text text-transparent'>
+    <div className="container mx-auto py-8 max-w-3xl">
+      <h1 className="text-4xl font-bold mb-8 text-primary">
         Categories
       </h1>
 
-      <form onSubmit={handleCreate} className='flex gap-4 mb-8'>
-        <input
-          type='text'
+      <form onSubmit={handleCreate} className="flex gap-4 mb-8">
+        <Input
+          type="text"
           value={newCategoryName}
           onChange={(e) => setNewCategoryName(e.target.value)}
-          placeholder='New category name'
+          placeholder="New category name"
           required
-          className='flex-1 bg-[#1a1a1a] text-white border border-[#646cff] rounded-lg px-4 py-2 focus:outline-none focus:border-[#535bf2]'
+          className="flex-1"
         />
-        <button
-          type='submit'
-          className='bg-[#646cff] hover:bg-[#535bf2] text-white'
-        >
+        <Button type="submit" className="flex items-center gap-2">
+          <PlusCircle className="h-4 w-4" />
           Add Category
-        </button>
+        </Button>
       </form>
 
-      <div className='space-y-4'>
+      <div className="space-y-3">
         {data.categories.map((category) => (
-          <div
-            key={category._id}
-            className='flex items-center justify-between p-4 bg-[#1a1a1a] rounded-lg border border-transparent hover:border-[#646cff] transition-all'
-          >
-            <span className='text-xl text-white'>{category.name}</span>
-            <div className='flex items-center gap-4'>
-              <Link
-                to={`/category/${category._id}`}
-                className='text-[#646cff] hover:text-[#535bf2] transition-colors'
-              >
-                Edit
-              </Link>
-              <button
-                onClick={() => handleDelete(category._id)}
-                className='text-red-400 hover:text-red-300 transition-colors'
-              >
-                Delete
-              </button>
-            </div>
-          </div>
+          <Card key={category._id} className="shadow-sm">
+            <CardContent className="flex items-center justify-between p-4">
+              <span className="text-lg font-medium">{category.name}</span>
+              <div className="flex items-center gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link to={`/category/${category._id}`} className="flex items-center gap-1">
+                    <Pencil className="h-4 w-4" />
+                    Edit
+                  </Link>
+                </Button>
+                <Button 
+                  variant="destructive" 
+                  size="sm" 
+                  onClick={() => handleDelete(category._id)}
+                  className="flex items-center gap-1"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  Delete
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </div>
