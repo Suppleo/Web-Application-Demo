@@ -11,6 +11,10 @@ import {
   typeDef as products,
   resolvers as productsResolvers,
 } from "./products.js";
+import {
+  typeDef as login,
+  resolvers as loginResolvers,
+} from "./authentication.js";
 
 const query = `
   type Query {
@@ -21,12 +25,13 @@ const query = `
     _emptyAction: String
   }
 `;
-const typeDefs = [query, hello, salute, categories, products];
+const typeDefs = [query, hello, salute, categories, products, login];
 const resolvers = _.merge(
   helloResolvers,
   saluteResolvers,
   categoriesResolvers,
-  productsResolvers
+  productsResolvers,
+  loginResolvers
 );
 
 export const schema = createSchema({

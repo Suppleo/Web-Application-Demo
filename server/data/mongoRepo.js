@@ -1,4 +1,4 @@
-import { Category, Product } from "./models/shared/index.js";
+import { Category, Product, User } from "./models/shared/index.js";
 
 const db = {
   categories: {
@@ -54,6 +54,11 @@ const db = {
         { new: true }
       ).populate("categoryId");
       return result;
+    },
+  },
+  users: {
+    findOne: async (username) => {
+      return await User.findOne({ username }).lean();
     },
   },
 };

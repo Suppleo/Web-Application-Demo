@@ -1,0 +1,148 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.no-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.no-page-container h1 {
+  font-size: 6rem;
+  margin: 0;
+  color: #e74c3c;
+}
+
+.no-page-container h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.home-link {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.home-link:hover {
+  background-color: #2980b9;
+}
+
+.categories-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.categories-list {
+  margin-top: 20px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.category-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.category-actions a,
+.category-actions button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.category-actions a {
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+}
+
+.category-actions button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input {
+  padding: 8px;
+  flex: 1;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.category-edit {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
